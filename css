@@ -1,0 +1,99 @@
+1. File Organization
+1.1 Folder Structure
+Organize CSS files in a modular structure based on features or components.
+bash
+Copy code
+/src
+  /styles
+    /base
+      _reset.css
+      _typography.css
+    /components
+      _button.css
+      _card.css
+    /layouts
+      _header.css
+      _footer.css
+    /themes
+      _dark-mode.css
+      _light-mode.css
+    main.css
+1.2 Naming Conventions
+Classes: Use BEM (Block Element Modifier) methodology for naming.
+Example: .button, .button__icon, .button--primary
+IDs: Use sparingly; prefer classes for styling.
+2. CSS Syntax and Style
+2.1 Selectors
+Use class selectors for styling. Avoid overly specific or deep selectors.
+Prefer using a single class or ID selector over multiple classes.
+2.2 Properties
+Order: Follow a logical order for CSS properties. A common pattern is:
+Positioning (e.g., position, top, left)
+Box model (e.g., width, height, margin, padding)
+Typography (e.g., font, color, text-align)
+Visuals (e.g., background, border, box-shadow)
+Shorthand: Use shorthand properties where possible to reduce the size of the CSS file.
+Example: margin: 10px 20px; instead of margin-top: 10px; margin-right: 20px; ...
+2.3 Units
+Font Sizes: Use rem or em for font sizes to support responsive design.
+Spacing: Use rem or em for margins and paddings to maintain consistent spacing.
+Dimensions: Use px for layout dimensions if necessary, but prefer %, vw, or vh for responsive designs.
+2.4 Color
+Variables: Use CSS variables or a preprocessor (e.g., SASS, LESS) for color schemes to ensure consistency and ease of theme changes.
+Hex/RGB/rgba: Use hex or RGB(a) values where appropriate. For opacity, prefer rgba.
+3. Responsive Design
+3.1 Media Queries
+Place media queries at the end of the CSS file or in separate files to improve readability.
+Use mobile-first approach: start with styles for small screens and use min-width for larger screens.
+Example:
+css
+Copy code
+/* Base styles */
+.container {
+  padding: 10px;
+}
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
+}
+4. Best Practices
+4.1 Consistency
+Maintain consistency in naming conventions, spacing, and syntax.
+Use a CSS linter (e.g., Stylelint) to enforce coding standards.
+4.2 Avoid Inline Styles
+Avoid using inline styles within HTML; keep styling within CSS files.
+4.3 Modularity
+Use component-based styles and avoid global styles that might lead to conflicts.
+Prefer scoped styles in components to ensure encapsulation.
+4.4 Performance
+Minify CSS files for production to improve load times.
+Use tools like PurgeCSS to remove unused styles.
+5. Documentation
+5.1 Comments
+Use comments to explain complex or non-obvious styles.
+Document any reusable or custom components and their intended use.
+5.2 Style Guide
+Maintain a style guide or pattern library to document design principles, component styles, and best practices.
+6. Accessibility
+6.1 Color Contrast
+Ensure sufficient color contrast between text and background for readability.
+6.2 Responsive Design
+Verify that styles work well on different screen sizes and orientations.
+6.3 Focus States
+Provide clear focus styles for interactive elements to support keyboard navigation.
+7. Version Control
+7.1 Commit Messages
+Use descriptive commit messages related to CSS changes. Follow the format: type(scope): description.
+Example: style(button): adjust padding for better alignment
+7.2 Branching Strategy
+Use feature branches for new styles or updates. Merge changes via pull requests.
