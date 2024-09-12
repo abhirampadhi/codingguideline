@@ -1,1 +1,99 @@
 
+1. Project Structure
+1.1 Folder Structure
+Use a modular folder structure with feature-based organization.
+Group related components, services, and modules together.
+Example structure:
+bash
+Copy code
+/src
+  /app
+    /core
+      /services
+      /guards
+      /interceptors
+    /shared
+      /components
+      /pipes
+      /directives
+    /features
+      /feature-one
+        /components
+        /services
+        /store
+      /feature-two
+    /layouts
+    /app.module.ts
+    /app.component.ts
+1.2 Naming Conventions
+Components: FeatureComponent
+Services: FeatureService
+Modules: FeatureModule
+Pipes: FeaturePipe
+Directives: FeatureDirective
+2. Coding Standards
+2.1 TypeScript
+Always use TypeScript types and interfaces for better type safety.
+Prefer const over let where variables are not reassigned.
+Use descriptive names for variables and functions.
+Avoid any type; use more specific types.
+2.2 Components
+Component Decorators: Use the @Component decorator with clear metadata.
+Templates: Keep templates simple and use Angular’s built-in directives.
+Styles: Use component-specific styles to avoid conflicts. Prefer SCSS for styling.
+2.3 Services
+Singleton Services: Use services for sharing logic and data across components.
+Dependency Injection: Use Angular’s DI system to inject services into components.
+HTTP Requests: Use Angular’s HttpClient module. Centralize API logic in a service.
+2.4 Modules
+Feature Modules: Use feature modules to encapsulate related components and services.
+Lazy Loading: Implement lazy loading for feature modules to improve initial load performance.
+Shared Modules: Place reusable components, directives, and pipes in shared modules.
+3. Best Practices
+3.1 Component Interaction
+@Input/@Output: Use @Input and @Output decorators for parent-child communication.
+Service-Based Communication: Use services for communication between sibling components or different modules.
+3.2 Forms
+Reactive Forms: Prefer reactive forms for complex form logic.
+Validation: Use Angular’s built-in validators and create custom validators as needed.
+3.3 Routing
+Routes: Define routes in a dedicated routing module. Use lazy loading for feature modules.
+Guards: Use route guards to handle authentication and authorization.
+3.4 State Management
+Service-Based State: Use services for simple state management.
+NgRx: Consider NgRx or similar libraries for more complex state management scenarios.
+4. Performance
+4.1 Change Detection
+OnPush Strategy: Use ChangeDetectionStrategy.OnPush where possible to optimize performance.
+TrackBy: Use trackBy in *ngFor loops to improve rendering performance.
+4.2 Lazy Loading
+Implement lazy loading for feature modules to decrease initial load time.
+4.3 AOT Compilation
+Enable Ahead-of-Time (AOT) compilation in production builds for faster rendering.
+5. Testing
+5.1 Unit Testing
+Use Jasmine and Karma for unit testing.
+Write tests for components, services, and other critical code.
+5.2 End-to-End Testing
+Use Protractor or Cypress for end-to-end testing.
+Write tests to cover critical user flows and interactions.
+6. Documentation
+6.1 Code Comments
+Use comments to explain complex logic and important decisions.
+Avoid redundant comments; the code should be self-explanatory.
+6.2 README Files
+Maintain a README file with project setup instructions, coding standards, and contribution guidelines.
+7. Version Control
+7.1 Commit Messages
+Use clear and concise commit messages. Follow the format: type(scope): description.
+Example: fix(auth): resolve token expiration issue
+7.2 Branching Strategy
+Use feature branches for new features or bug fixes.
+Merge changes to the main or master branch via pull requests.
+8. Security
+8.1 Sanitization
+Use Angular’s built-in sanitization to protect against XSS attacks.
+Avoid unsafe innerHTML usage.
+8.2 Authentication
+Use Angular’s route guards to protect routes.
+Implement proper session management and token handling.
